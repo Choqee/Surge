@@ -1,0 +1,36 @@
+#!name=JS 合集. By Vviliu
+#!desc=该模块适用于 Adv Premuim
+#!system=ios
+
+[Script]
+# 微信公众号去广告
+http-response ^https://mp.weixin.qq.com/mp/getappmsgad requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/WeChat.js
+# YouTube去广告
+http-request ^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier) script-path=https://Choler.github.io/Surge/Script/YouTube.js
+# 微博去广告
+http-response ^https?:\/\/(api|mapi)\.weibo\.(cn|com)\/2/(statuses\/(unread|extend|positives/get|friends(\/|_)timeline)|stories\/(video_stream|home_list)|groups\/timeline|fangle\/timeline|profile\/statuses|comments\/build_comments|photo\/recommend_list|service\/picfeed|searchall|cardlist) script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,requires-body=true
+http-response ^https?:\/\/(sdk|wb)app\.uve\.weibo\.com(\/interface\/sdk\/sdkad.php|\/wbapplua\/wbpullad.lua) script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,requires-body=true
+# 腾讯新闻去广告
+http-response https://r\.inews\.qq.com\/get(QQNewsUnreadList|RecommendList) requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/QQNews.js
+# 今日头条去广告
+http-response ^https://[a-zA-Z]*\.snssdk\.com/api/news/feed/v88/ requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/Toutiao.js
+# 京东历史价格
+http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
+# 淘宝历史价格
+http-response ^https?://(trade-acs|amdc)\.m\.taobao\.com/(gw/mtop\.taobao\.detail\.getdetail|amdc/mobileDispatch) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
+# workingcopy解锁
+http-response ^https:\/\/education\.github\.com\/api\/user$ requires-body=1,max-size=0,script-path=./Scripts/workingcopy.js
+# pear解锁
+http-response ^https:\/\/m\.pearkin\.com\/(api\/Movie\/WatchMovie|api\/Account\/CheckVip|api\/account\/IndexDetail) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/pear.js
+# vsco
+http-response ^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/ requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/vsco.js
+# 滴答清单
+http-request ^https:\/\/(ticktick|dida365)\.com\/api\/v2\/user\/statu script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/DiDaQingDan.js
+# 人人视频
+http-response ^https:\/\/api\.rr\.tv(\/user\/privilege\/list|\/ad\/getAll) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/XYXShawn/JS/master/rrtv.js
+# 克拉壁纸
+http-response ^https:\/\/claritywallpaper\.com\/clarity\/api\/(userInfo|special\/queryByCatalogAll) requires-body=1,max-size=262144,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/clarity.js
+# 熊掌记
+http-response ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt requires-body=1,max-size=0,script-path=./Scripts/bear.js
+# 轻颜相机
+http-response ^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info requires-body=1,max-size=0,script-path=./Scripts/qyxj.js
