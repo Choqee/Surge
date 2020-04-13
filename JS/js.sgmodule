@@ -2,6 +2,7 @@
 #!desc=该模块适用于 Adv Premuim
 #!system=ios
 
+[Script]
 # 微信公众号去广告
 http-response ^https://mp.weixin.qq.com/mp/getappmsgad requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/WeChat.js
 # YouTube去广告
