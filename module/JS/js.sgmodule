@@ -34,3 +34,6 @@ clarity.js = type=http-response,pattern=^https:\/\/claritywallpaper\.com\/clarit
 bear.js = type=http-response,pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt requires-body=1,max-size=0,script-path=./Scripts/bear.js
 # 轻颜相机
 qyxj.js = type=http-response,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info requires-body=1,max-size=0,script-path=./Scripts/qyxj.js
+
+[MITM]
+hostname = %APPEND% api.m.jd.com, m.pearkin.com, education.github.com, dida365.com, claritywallpaper.com, amdc.m.taobao.com, trade-acs.m.taobao.com, *.googlevideo.com, vsco.co
